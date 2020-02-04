@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import './ExerciseOne.js';
+import ExerciseOne from './ExerciseOne.js';
 class App extends React.Component {
 
-  render{  
+  render(){  
     return (
       <div className="App">
         <header className="App-header">
