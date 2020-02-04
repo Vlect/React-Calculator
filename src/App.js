@@ -1,8 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ExerciseOne from './ExerciseOne.js';
+import ExerciseTwo from './ExerciseTwo.js';
+import ReactDOM from 'react-dom';
 class App extends React.Component {
+
+
+  exerciseOne(){
+
+    ReactDOM.render(<ExerciseOne />, document.getElementById('root'));
+
+  }
+
+  exerciseTwo(){
+
+    ReactDOM.render(<ExerciseTwo />, document.getElementById('root'));
+
+  }
 
   render(){  
     return (
@@ -11,12 +25,12 @@ class App extends React.Component {
 
           <ul>
             
-            <li>Exercise: </li>
-            <li>Exercise: </li>
-            <li>Exercise: </li>
-            <li>Exercise: </li>
-            <li>Exercise: </li>
-            <li>Exercise: </li>
+            <li>Exercise No.1 <button onClick={this.exerciseOne}>Exercise One</button></li>
+            <li>Exercise No.2 <button onClick={this.exerciseTwo}>Exercise Two</button></li>
+            <li>Exercise No.1 <button onClick={this.dirigir}>Exercise One</button></li>
+            <li>Exercise No.1 <button onClick={this.dirigir}>Exercise One</button></li>
+            <li>Exercise No.1 <button onClick={this.dirigir}>Exercise One</button></li>
+            <li>Exercise No.1 <button onClick={this.dirigir}>Exercise One</button></li>
 
           </ul>
 
