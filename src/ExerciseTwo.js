@@ -18,8 +18,7 @@ class ExerciseTwo extends React.Component{
 		var number = this.state.num1;
 
 		if(number % 2 == 0){
-
-
+			
 			console.log(`${number} is a even number.`);
 
 		}else{
