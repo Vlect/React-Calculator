@@ -8,7 +8,7 @@ class ExericiseNine extends React.Component{
 	constructor(props){
 
 		super(props);
-		this.state={count : 0};
+		this.state={count : 0, total : 0};
 
 	}
 
@@ -26,9 +26,7 @@ class ExericiseNine extends React.Component{
 			tShirtsCost *= buyingCount;
 			discount =  tShirtsCost * offer;
 			totalCost =  tShirtsCost - discount
-
-			console.log(`The discount in total, was: ${discount}`);
-			console.log(`The total cost to pay would be: ${totalCost}.`);
+			this.setState({total : totalCost});
 
 		}else if (buyingCount > 3 && buyingCount < 5){
 
@@ -37,9 +35,7 @@ class ExericiseNine extends React.Component{
 			tShirtsCost *= buyingCount;
 			discount =  tShirtsCost * offer;
 			totalCost =  tShirtsCost - discount
-
-			console.log(`The discount in total, was: ${discount}`);
-			console.log(`The total cost to pay would be: ${totalCost}.`);
+			this.setState({total : totalCost});
 
 		}else{
 
@@ -48,14 +44,15 @@ class ExericiseNine extends React.Component{
 			tShirtsCost *= buyingCount;
 			discount =  tShirtsCost * offer;
 			totalCost =  tShirtsCost - discount
-
-			console.log(`The discount in total, was: ${discount}`);
-			console.log(`The total cost to pay would be: ${totalCost}`)
-
+			this.setState({total : totalCost});
 		}
 
 	}
+	goBack(){
 
+		ReacDOM.render(<App />, document.getElementById('root'));
+
+	}
 
 	render(){
 
@@ -74,6 +71,8 @@ class ExericiseNine extends React.Component{
 				<button onClick={this.totalCost}>Calculate the total cost</button>
 				<button onClick={this.goBack}>go Back</button>
 
+				<p>The discount in total, was: {this.state.total}</p>
+				<p>The total cost to pay would be: {this.state.total}</p>
 			</div>
 
 		);

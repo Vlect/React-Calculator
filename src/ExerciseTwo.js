@@ -19,10 +19,10 @@ class ExerciseTwo extends React.Component{
 
 		if(number % 2 == 0){
 			
-			console.log(`${number} is a even number.`);
+		document.getElementById('pa').innerHTML = number + ' is a even number';
 
 		}else{
-			console.log(`${number} is a odd number`);
+		document.getElementById('pa').innerHTML = number + ' is a odd number';
 		}
 
 	}

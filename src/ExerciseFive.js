@@ -8,7 +8,7 @@ class ExerciseFive extends React.Component{
 	constructor(props){
 
 		super(props);
-		this.state = {num1 : 0, num2 : 0, num3 : 0};
+		this.state = {num1 : 0, num2 : 0, num3 : 0, biggest : 0};
 		this.theBigger = this.theBigger.bind(this);
 
 	}
@@ -31,7 +31,10 @@ class ExerciseFive extends React.Component{
 			if(numbers[i] > biggest){
 				biggest = parseInt(numbers[i]);
 			}
+
 		}
+
+		this.setState({biggest : biggest});
 
 		console.log(biggest);
 	}
@@ -66,6 +69,8 @@ class ExerciseFive extends React.Component{
 
 					<button onClick={this.theBigger}>Calculate</button>
 					<button onClick={this.goBack}>Go back</button>
+
+					<p>The biggest number is: {this.state.biggest}</p>
 
 				</div>
 

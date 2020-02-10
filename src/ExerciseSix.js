@@ -40,18 +40,13 @@ class ExerciseSix extends React.Component{
 
 		if(result >= 3.5){
 
-			console.log('You passed the subject with: ' + result);
+			document.getElementById('pa').innerHTML = 'You passed the subject with: ' + result.toFixed(2);
 
 		}else{
 
-			console.log('You dimissed the subject with: ' + result);
+			document.getElementById('pa').innerHTML = 'You dimissed the subject with: ' + result.toFixed(2);
 
 		}
-
-		console.log(result);
-		console.log(getGreats);
-		console.log(average);
-
 	}
 
 	render(){
@@ -90,11 +85,7 @@ class ExerciseSix extends React.Component{
 
 				<button onClick={this.greatsAverage}>Calculate greats average</button>
 				<button onClick={this.goBack}>Go back</button>
-				<br/>
-				<label>Average</label>
-				<br/>
-				{this.state.average};
-				<br/>
+				
 
 			</div>
 		);

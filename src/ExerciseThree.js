@@ -26,19 +26,19 @@ class ExerciseThree extends React.Component{
 
 		if(number > 99 && number <= 999){
 
-			console.log('The number has three figures');
+			document.getElementById('pa').innerHTML ='The number has three figures';
 
 		}else if(number > 9 && number <= 99){
 
-			console.log('The number has two figures');
+			document.getElementById('pa').innerHTML ='The number has two figures';
 
 		}else if(number <= 9){
 
-			console.log('The number only has one figure');
+			document.getElementById('pa').innerHTML ='The number only has one figure';
 
 		}else{
 
-			console.log('You introduced a number of more figures');
+			document.getElementById('pa').innerHTML ='You introduced a number of more figures';
 		}
 
 	}
@@ -58,7 +58,7 @@ class ExerciseThree extends React.Component{
 
 					/>
 				<button onClick={this.numerLength}>Calculate</button>	
-
+				<button onClick={this.goBack}>Go back</button>
 				</div>			
 
 			);

@@ -8,7 +8,7 @@ class ExerciseSeve extends React.Component{
 	constructor(props){
 
 		super(props);
-		this.state={cost : 0};
+		this.state={cost : 0, discount : 0, totalCost : 0};
 
 	}
 
@@ -23,14 +23,21 @@ class ExerciseSeve extends React.Component{
 			discount = buyingCost * offer;
 			totalCost = buyingCost - discount
 
-			console.log(`The discount in total, was: ${discount}`);
-			console.log(`The total cost to pay it'd: ${totalCost}.`);
+			this.setState({discount : discount});
+			this.setState({totalCost : totalCost});
+
 
 		}else{
 
-			console.log(`The total cost to pay it'd: ${buyingCost}.`);
+			this.setState({totalCost : buyingCost});
 
 		}
+
+	}
+
+	goBack(){
+
+		ReacDOM.render(<App />, document.getElementById('root'));
 
 	}
 
@@ -51,6 +58,9 @@ class ExerciseSeve extends React.Component{
 
 				<button onClick={this.totalCost}>Calculate the total cost</button>
 				<button onClick={this.goBack}>go Back</button>
+
+				<p>Your discount is: {this.state.discount}</p>
+				<p>Your discount is: {this.state.totalCost}</p>
 
 			</div>
 

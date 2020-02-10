@@ -24,10 +24,11 @@ class ExerciseFour extends React.Component{
 
 		if(number == number2){
 
-			console.log(`${number} and ${number2} are equals`);
+			document.getElementById('pa').innerHTML = number + " and " + number2 + " are equals ";
 
 		}else{
-			console.log(`${number} and ${number2} are unequals`);
+
+			document.getElementById('pa').innerHTML = number + " and " + number2 + " are unequals ";
 		}
 
 	}

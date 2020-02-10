@@ -8,7 +8,7 @@ class ExericiseTen extends React.Component{
 	constructor(props){
 
 		super(props);
-		this.state={years : 0};
+		this.state={years : 0, total : 0};
 
 	}
 
@@ -23,7 +23,7 @@ class ExericiseTen extends React.Component{
 
 			utility = 0.05;
 			totalSalary = salary * utility;
-			console.log(`Your total mount is: ${totalSalary}`);
+			this.setState({total : totalSalary});
 
 
 		}else if (yearsWorked >= 1 && yearsWorked < 2){
@@ -31,30 +31,36 @@ class ExericiseTen extends React.Component{
 
 			utility = 0.07;
 			totalSalary = salary * utility;
-			console.log(`Your total mount is: ${totalSalary}`);
+			this.setState({total : totalSalary});
 
 		}else if(yearsWorked >= 2 && yearsWorked < 5){
 
 
 			utility = 0.1;
 			totalSalary = salary * utility;
-			console.log(`Your total mount is: ${totalSalary}`);
+			this.setState({total : totalSalary});
 
 		}else if(yearsWorked >= 5 && yearsWorked < 10){
 
 
 			utility = 0.15;
 			totalSalary = salary * utility;
-			console.log(`Your total mount is: ${totalSalary}`);
+			this.setState({total : totalSalary});
 
 		}else if(yearsWorked >= 10){
 
 
 			utility = 0.2;
 			totalSalary = salary * utility;
-			console.log(`Your total mount is: ${totalSalary}`);
+			this.setState({total : totalSalary});
 
 		}
+
+	}
+
+	goBack(){
+
+		ReacDOM.render(<App />, document.getElementById('root'));
 
 	}
 
@@ -75,6 +81,8 @@ class ExericiseTen extends React.Component{
 
 				<button onClick={this.totalSalary}>Calculate the salary</button>
 				<button onClick={this.goBack}>go Back</button>
+
+				<p>This is your mount: {this.state.total}</p>
 
 			</div>
 

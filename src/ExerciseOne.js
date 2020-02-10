@@ -26,15 +26,15 @@ class ExerciseOne extends React.Component{
 
 		if(number === 0){
 
-			console.log("This number is: " + number);
+			document.getElementById('pa').innerHTML = "This number is: " + number;
 
 		}else if(number > 0){
 
-			console.log("This number is: " + number + ". It is a positive number");
+			document.getElementById('pa').innerHTML = "This number is: " + number + ". It is a positive number";
 
 		}else{
 
-			console.log("This number is: " + number + ". It is a negative number");
+			document.getElementById('pa').innerHTML = "This number is: " + number + ". It is a negative number";
 
 		}
 	}
@@ -54,12 +54,9 @@ class ExerciseOne extends React.Component{
 
 	    			onClick={() => this.calculatingNumber()}
 
-	    		></button>
+	    		>Calculate the number</button>
 
 	    		<button onClick={this.goBack}>Go back.</button>
-
-
-		    	{this.state.num1}
 
 	    	</div>
   		);

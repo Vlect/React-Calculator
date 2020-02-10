@@ -8,7 +8,7 @@ class ExerciseEight extends React.Component{
 	constructor(props){
 
 		super(props);
-		this.state={hours : 0};
+		this.state={hours : 0, total : 0};
 
 	}
 
@@ -21,19 +21,24 @@ class ExerciseEight extends React.Component{
 		if(hours <= 40){
 
 			totalToEarn = hours * 2000;
-			console.log(`The total you will earn is: ${totalToEarn}`);
+			this.setState({total : totalToEarn})
 
 		}else{
 
 			extraHours = hours - 40;
 
 			totalToEarn = ((hours - extraHours) * 2000) + (extraHours * 3000);
-			console.log(`The total you will earn is: ${totalToEarn}`);
+			this.setState({total : totalToEarn})
 
 		}		
 
 	}
 
+	goBack(){
+
+		ReacDOM.render(<App />, document.getElementById('root'));
+
+	}
 
 	render(){
 
@@ -56,6 +61,8 @@ class ExerciseEight extends React.Component{
 
 				<button onClick={this.totalToPay}>Calculate the total you will earn</button>
 				<button onClick={this.goBack}>go Back</button>
+
+				<p>The total you will earn is: {this.state.total}</p>
 
 			</div>
 
